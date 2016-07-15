@@ -6,7 +6,7 @@
 //  Copyright © 2016 DevMountain. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Movie {
     
@@ -18,9 +18,9 @@ class Movie {
     var title: String
     var rating: Int
     var overview: String
-    var poster: String
+    var poster: UIImage
     
-    init(title: String, rating: Int, overview: String, poster: String) {
+    init(title: String, rating: Int, overview: String, poster: UIImage) {
         self.title = title
         self.rating = rating
         self.overview = overview
@@ -36,6 +36,9 @@ class Movie {
         self.title = title
         self.rating = rating
         self.overview = overview
-        self.poster = poster
+        
+        guard let baseImageURL = NSURL(string: "http://image.tmdb.org/t/p/w500") else { return nil }
+        guard let imageData = NSData(contentsOfURL: baseImageURL.URLByAppendingPathComponent(poster)) else { return nil }
+        self.poster = UIImage(data: imageData)!
     }
 }

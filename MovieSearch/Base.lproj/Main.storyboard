@@ -17,6 +17,9 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="2fX-ya-dav" id="1lE-Zi-zTT"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="234" id="3vS-vI-q7z" customClass="MovieTableViewCell" customModule="MovieSearch" customModuleProvider="target">
@@ -74,6 +77,12 @@
                                         <constraint firstItem="HAb-rQ-i2Q" firstAttribute="top" secondItem="OZ9-gL-Sfu" secondAttribute="bottom" constant="8" id="zCn-WJ-e30"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="LOO-bc-0BP" id="Jvf-vT-Od2"/>
+                                    <outlet property="posterImageView" destination="5EM-YR-3ao" id="fRs-p2-5Yf"/>
+                                    <outlet property="ratingLabel" destination="HAb-rQ-i2Q" id="EW4-vM-gWY"/>
+                                    <outlet property="titleLabel" destination="OZ9-gL-Sfu" id="Mwl-xt-5Le"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -82,6 +91,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="XJV-bw-2iU"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Cs6-Y8-2sQ" id="9BS-c5-SXh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qek-zG-EJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
