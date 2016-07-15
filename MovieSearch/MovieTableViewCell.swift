@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell, UISearchBarDelegate {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
@@ -18,11 +18,11 @@ class MovieTableViewCell: UITableViewCell {
     weak var delegate: MovieTableViewCellDelegate?
     
     var movie: Movie?
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     func updateWithMovie(movie: Movie) {
         self.movie = movie
         
