@@ -18,14 +18,7 @@ class Movie {
     var title: String
     var rating: Int
     var overview: String
-    var poster: UIImage
-    
-    init(title: String, rating: Int, overview: String, poster: UIImage) {
-        self.title = title
-        self.rating = rating
-        self.overview = overview
-        self.poster = poster
-    }
+    var poster: String
     
     init?(dictionary: [String : AnyObject]) {
         guard let title = dictionary[kTitle] as? String,
@@ -33,12 +26,14 @@ class Movie {
             overview = dictionary[kOverview] as? String,
             poster = dictionary[kPoster] as? String else { return nil }
         
+        let imageURL = NSURL(string: "http://image.tmdb.org/t/p/w500")?.URLByAppendingPathComponent(poster)
+        
         self.title = title
         self.rating = rating
         self.overview = overview
+        self.poster = String(imageURL)
         
-        guard let baseImageURL = NSURL(string: "http://image.tmdb.org/t/p/w500") else { return nil }
-        guard let imageData = NSData(contentsOfURL: baseImageURL.URLByAppendingPathComponent(poster)) else { return nil }
-        self.poster = UIImage(data: imageData)!
+        
+        
     }
 }

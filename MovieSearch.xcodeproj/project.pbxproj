@@ -16,6 +16,7 @@
 		A207640D1D39364D003A2CCF /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207640C1D39364D003A2CCF /* NetworkController.swift */; };
 		A207640F1D393669003A2CCF /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207640E1D393669003A2CCF /* MovieController.swift */; };
 		A20764121D393691003A2CCF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20764111D393691003A2CCF /* Movie.swift */; };
+		A2F2115A1D399BEE00C9D3E4 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F211591D399BEE00C9D3E4 /* ImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A207640C1D39364D003A2CCF /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		A207640E1D393669003A2CCF /* MovieController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		A20764111D393691003A2CCF /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A2F211591D399BEE00C9D3E4 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				A20764101D393683003A2CCF /* Model Controllers */,
 				A207640B1D393615003A2CCF /* View Controllers */,
 				A207640C1D39364D003A2CCF /* NetworkController.swift */,
+				A2F211591D399BEE00C9D3E4 /* ImageController.swift */,
 				1A4A23471CCAA554003A4350 /* Assets.xcassets */,
 				1A4A23491CCAA554003A4350 /* LaunchScreen.storyboard */,
 				1A4A234C1CCAA554003A4350 /* Info.plist */,
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F2115A1D399BEE00C9D3E4 /* ImageController.swift in Sources */,
 				A207640D1D39364D003A2CCF /* NetworkController.swift in Sources */,
 				A207640F1D393669003A2CCF /* MovieController.swift in Sources */,
 				A20764121D393691003A2CCF /* Movie.swift in Sources */,

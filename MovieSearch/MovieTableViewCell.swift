@@ -29,7 +29,10 @@ class MovieTableViewCell: UITableViewCell, UISearchBarDelegate {
         titleLabel.text = movie.title
         ratingLabel.text = String(movie.rating)
         descriptionLabel.text = movie.overview
-        posterImageView.image = movie.poster
+        ImageController.imageForURL(movie.poster) { (image) in
+            guard let image = image else { return }
+            self.posterImageView.image = image
+        }
     }
 }
 
