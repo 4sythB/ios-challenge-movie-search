@@ -15,8 +15,6 @@ class MovieTableViewCell: UITableViewCell, UISearchBarDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var posterImageView: UIImageView!
     
-    weak var delegate: MovieTableViewCellDelegate?
-    
     var movie: Movie?
     
     override func awakeFromNib() {
@@ -35,8 +33,4 @@ class MovieTableViewCell: UITableViewCell, UISearchBarDelegate {
             self.posterImageView.image = image
         }
     }
-}
-
-protocol MovieTableViewCellDelegate: class {
-    
 }

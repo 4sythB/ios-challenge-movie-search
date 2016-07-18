@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieListTableViewController: UITableViewController, UISearchBarDelegate, MovieTableViewCellDelegate {
+class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     
     var movies: [Movie] = []
 
@@ -43,7 +43,6 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate, 
         let movie = movies[indexPath.row]
         
         cell.updateWithMovie(movie)
-        cell.delegate = self
 
         return cell
     }
