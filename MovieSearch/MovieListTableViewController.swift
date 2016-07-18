@@ -14,18 +14,21 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     // MARK: - Search
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         MovieController.getMovies(searchTerm) { (movies) in
             self.movies = movies
+            self.tableView.reloadData()
         }
         
-        tableView.reloadData()
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.sharedApplication().sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, forEvent:nil)
+
     }
 
     // MARK: - Table view data source
@@ -36,7 +39,10 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate, 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier("movieCell", forIndexPath: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
-    
+        
+        let movie = movies[indexPath.row]
+        
+        cell.updateWithMovie(movie)
         cell.delegate = self
 
         return cell

@@ -24,11 +24,12 @@ class MovieTableViewCell: UITableViewCell, UISearchBarDelegate {
     }
     
     func updateWithMovie(movie: Movie) {
-        self.movie = movie
+//        self.movie = movie
         
         titleLabel.text = movie.title
-        ratingLabel.text = String(movie.rating)
+        ratingLabel.text = "Rating: \(String(movie.rating))"
         descriptionLabel.text = movie.overview
+        
         ImageController.imageForURL(movie.poster) { (image) in
             guard let image = image else { return }
             self.posterImageView.image = image

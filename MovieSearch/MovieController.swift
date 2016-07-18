@@ -28,7 +28,6 @@ class MovieController {
             }
             
             dispatch_async(dispatch_get_main_queue(), {
-                print(moviesArray)
                 let movies = moviesArray.flatMap { Movie(dictionary: $0) }
                 completion(movies: movies)
             })
